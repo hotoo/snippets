@@ -19,6 +19,14 @@ snippet proto
 		${4:// body...}
 	};
 # Function
+snippet =function
+	function (${1:args}) {
+		${2:// body...}
+	};
+snippet :function
+	function (${1:args}) {
+		${2:// body...}
+	};
 snippet fun
 	function ${1:function_name}(${2:args}){
 		${3:// body...}
@@ -129,3 +137,29 @@ snippet def
 	define(function(require, exports, module) {
 		${1}
 	});
+
+# ES6
+snippet fun*
+	function* ${1:function_name}(${2:args}) {
+		yield ${3:value};
+	}
+snippet func*
+	function* ${1:function_name}(${2:args}) {
+		yield ${3:value};
+	}
+snippet function*
+	function* ${1:function_name}(${2:args}) {
+		yield ${3:value};
+	}
+snippet class
+	class ${1:class_name} {
+		constructor (${2:args}) {
+			${3}
+		}
+	}
+snippet forof
+	for (let ${1:val} of ${2:sequence}) {
+		${3:$1}
+	}
+snippet im
+	import ${1:foo} from "${2:bar}"
