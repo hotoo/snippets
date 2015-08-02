@@ -163,3 +163,15 @@ snippet forof
 	}
 snippet im
 	import ${1:foo} from "${2:bar}"
+snippet describe
+	describe('${1:description}', function () {
+		it('${2:testcase description}', function() {
+			// object.should.be.eql('object');
+			${3}
+		});
+	});
+snippet it
+	it('${1:testcase description}', function() {
+		// object.should.be.eql('object');
+		${2}
+	});
