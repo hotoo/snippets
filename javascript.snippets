@@ -36,17 +36,22 @@ snippet f
 	function(${1:args}){${2:/* code */}}${3}
 # if
 snippet if
-	if(${1:true}){${2}}
+	if (${1:true}) {
+		${2}
+	}
 # if ... else
 snippet ife
-	if(${1:true}){${2}}
-	else{${3}}
+	if (${1:true}){
+		${2}
+	} else {
+		${3}
+	}
 # tertiary conditional
 snippet t
 	${1:/* condition */} ? ${2:a} : ${3:b}
 # switch
 snippet switch
-	switch(${1:expression}){
+	switch (${1:expression}) {
 	case '${3:case}':
 		${4:// code}
 		break;${5}
@@ -64,45 +69,45 @@ snippet forEach
 		${3}
 	});
 snippet for
-	for (var ${1:i}=0, ${2:l}=${3:list}.length; $1<$2; $1++) {
+	for (let ${1:i} = 0, ${2:l} = ${3:list}.length; $1 < $2; $1++) {
 		${4:$3[$1]}
 	}
 # for (...) {...} (Improved Native For-Loop)
 snippet for-
-	for (var ${1:i}=${2:list}.length-1; $1>=0; $1--) {
+	for (let ${1:i} = ${2:list}.length - 1; $1 >= 0; $1--) {
 		${3:$2[$1]}
 	}
 snippet forin
-	for (var ${1:k} in ${2:obj}) {
+	for (let ${1:k} in ${2:obj}) {
 		${3:$2[$1]}
 	}
 # while (...) {...}
 snippet wh
-	while(${1:}){
+	while (${1:}){
 		${2:/* code */}
 	}
 snippet while
-	while(${1:}){
+	while (${1:}) {
 		${2:/* code */}
 	}
 # do...while
 snippet do
-	do{
+	do {
 		${2:/* code */}
-	}while(${1:});
+	} while (${1:});
 # try{...}catch(e){...}
 snippet try
-	try{
+	try {
 		${1:}
-	}catch(${2:ex}){${3}}${4}
+	} catch (${2:ex}) {${3: /* */ }}${4}
 # Object Method
 snippet :f
-	${1:method_name}:function(${2:attribute}){
+	${1:method_name}: function(${2:attribute}) {
 		${4}
 	}${3:,}
 # setTimeout function
 snippet timeout
-	setTimeout(function(){
+	setTimeout(function() {
 		${2}
 	}, ${1:25})${3};
 snippet interval
