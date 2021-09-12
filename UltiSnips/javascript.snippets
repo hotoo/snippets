@@ -1,0 +1,252 @@
+# Comments
+snippet /** "Multiple line comments"
+/**
+ * ${1:@overview}
+ * @param {${2:String/Number/RegExp/Date/Function/Array/Object}} ${3}
+ * @return {${4:String/Number/RegExp/Date/Function/Array/Object}} ${5}
+ */${6}
+endsnippet
+
+snippet @param
+@param {${1:String/Number/RegExp/Date/Function/Array/Object}} ${2}
+endsnippet
+
+snippet @author
+@author ${1:`g:snips_author`}
+endsnippet
+
+snippet @version
+@version ${1:1.0}, ${2:`strftime("%Y/%m/%d")`}
+endsnippet
+
+snippet @dep
+@deprecated
+endsnippet
+
+snippet proto "Prototype"
+${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}){
+	${4:// body...}
+};
+endsnippet
+
+snippet =function "Function"
+	function (${1:args}) {
+		${2:// body...}
+	};
+endsnippet
+
+snippet :function
+	function (${1:args}) {
+		${2:// body...}
+	};
+endsnippet
+
+snippet fun
+	function ${1:function_name}(${2:args}){
+		${3:// body...}
+	}
+endsnippet
+
+snippet f "Anonymous Function"
+	function(${1:args}){${2:/* code */}}${3}
+endsnippet
+
+snippet if
+	if (${1:true}) {
+		${2}
+	}
+endsnippet
+
+snippet ife "if ... else"
+	if (${1:true}){
+		${2}
+	} else {
+		${3}
+	}
+endsnippet
+
+snippet t "tertiary conditional"
+${1:/* condition */} ? ${2:a} : ${3:b}
+endsnippet
+
+snippet switch
+	switch (${1:expression}) {
+	case '${3:case}':
+		${4:// code}
+		break;${5}
+	default:
+		${2:// code}
+	}
+endsnippet
+
+snippet case
+	case '${1:case}':
+		${2:// code}
+		break;${3}
+endsnippet
+
+snippet forEach
+	forEach(function(${1:value}, ${2:index}) {
+		${3}
+	});
+endsnippet
+
+snippet for
+	for (let ${1:i} = 0, ${2:l} = ${3:list}.length; $1 < $2; $1++) {
+		${4:$3[$1]}
+	}
+endsnippet
+
+snippet for- "for (...) {...} (Improved Native For-Loop)"
+	for (let ${1:i} = ${2:list}.length - 1; $1 >= 0; $1--) {
+		${3:$2[$1]}
+	}
+endsnippet
+
+snippet forin
+	for (let ${1:k} in ${2:obj}) {
+		${3:$2[$1]}
+	}
+endsnippet
+
+snippet wh "while (...) {...}"
+	while (${1:}){
+		${2:/* code */}
+	}
+endsnippet
+
+snippet while
+	while (${1:}) {
+		${2:/* code */}
+	}
+endsnippet
+
+snippet do "do...while"
+	do {
+		${2:/* code */}
+	} while (${1:});
+endsnippet
+
+snippet try "try{...}catch(e){...}"
+	try {
+		${1:}
+	} catch (${2:ex}) {${3: /* */ }}${4}
+endsnippet
+
+snippet :f "Object Method"
+	${1:method_name}: function(${2:attribute}) {
+		${4}
+	}${3:,}
+endsnippet
+
+snippet timeout "setTimeout function"
+	setTimeout(function() {
+		${2}
+	}, ${1:25})${3};
+endsnippet
+
+snippet interval
+	setInterval(${1:function}, ${2:25});${3}
+endsnippet
+
+snippet $ "Get Element"
+	document.getElementBy${1:Id}('${2}')${3}
+endsnippet
+
+snippet get
+document.getElementBy${1:Id}('${2}')${3}
+endsnippet
+
+snippet gets "Get Elements"
+document.getElementsBy${1:TagName}('${2}')${3}
+endsnippet
+
+snippet write
+document.write(${1:"text"})${2}
+endsnippet
+
+snippet enc escape
+escape(${1})
+endsnippet
+
+snippet enc
+encodeURIComponent(${1})
+endsnippet
+
+snippet log
+if(window.console && window.console.log){window.console.log(${1});}
+endsnippet
+
+snippet debug
+if(window.console && window.console.debug){window.console.debug(${1});}
+endsnippet
+
+snippet info
+if(window.console && window.console.info){window.console.info(${1});}
+endsnippet
+
+snippet warn
+if(window.console && window.console.warn){window.console.warn(${1});}
+endsnippet
+
+snippet err
+if(window.console && window.console.error){window.console.error(${1});}
+endsnippet
+
+snippet def
+define(function(require, exports, module) {
+	${1}
+});
+endsnippet
+
+snippet fun* "generator function"
+function* ${1:function_name}(${2:args}) {
+	yield ${3:value};
+}
+endsnippet
+
+snippet func*
+function* ${1:function_name}(${2:args}) {
+	yield ${3:value};
+}
+endsnippet
+
+snippet function*
+function* ${1:function_name}(${2:args}) {
+	yield ${3:value};
+}
+endsnippet
+
+snippet class
+class ${1:class_name} {
+	constructor (${2:args}) {
+		${3}
+	}
+}
+endsnippet
+
+snippet forof
+for (let ${1:val} of ${2:sequence}) {
+	${3:$1}
+}
+endsnippet
+
+snippet im
+import ${1:foo} from "${2:bar}";
+endsnippet
+
+snippet describe
+describe('${1:description}', function () {
+	it('${2:testcase description}', function() {
+		// object.should.be.eql('object');
+		${3}
+	});
+});
+endsnippet
+
+snippet it
+it('${1:testcase description}', function() {
+	// object.should.be.eql('object');
+	${2}
+});
+endsnippet

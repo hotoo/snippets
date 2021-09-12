@@ -1,0 +1,490 @@
+# Some useful Unicode entities
+# Non-Breaking Space
+# Template
+snippet html
+	<!DOCTYPE html>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+		<head>
+			<meta charset="UTF-8" />
+			<meta name="keywords" content="" />
+			<meta name="description" content="" />
+			<meta name="generator" content="Vim" />
+			<meta name="author" content="闲耘™ (hotoo.cn[AT]gmail.com)" />
+			<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+			<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		</head>
+	<body>
+		${2}
+	</body>
+	</html>
+endsnippet
+snippet script
+	<script type="text/javascript">
+	${1}
+	</script>
+endsnippet
+snippet js
+	<script type="text/javascript">
+	${1}
+	</script>
+endsnippet
+snippet scriptsrc
+	<script type="text/javascript" src="${1:.js}"></script>${2}
+endsnippet
+snippet script:src
+	<script type="text/javascript" src="${1:.js}"></script>${2}
+endsnippet
+snippet jsrc
+	<script type="text/javascript" src="${1:.js}"></script>${2}
+endsnippet
+snippet noscript
+	<noscript>
+		${1}
+	</noscript>${2}
+endsnippet
+snippet style
+	<style type="text/css" media="${1:screen}">
+		${2}
+	</style>${3}
+endsnippet
+snippet link:style
+	<link rel="stylesheet" type="text/css" href="${1}" />${2}
+endsnippet
+snippet div
+	<div id="${1:name}">
+		${2}
+	</div>
+# Embed QT Movie
+endsnippet
+snippet movie
+	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+	 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+		<param name="src" value="$1"`Close()`>
+		<param name="controller" value="$4"`Close()`>
+		<param name="autoplay" value="$5"`Close()`>
+		<embed src="${1:movie.mov}"
+			width="${2:320}" height="${3:240}"
+			controller="${4:true}" autoplay="${5:true}"
+			scale="tofit" cache="true"
+			pluginspage="http://www.apple.com/quicktime/download/"
+		`Close()[1:]`>
+	</object>${6}
+endsnippet
+snippet object
+	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+	 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+		<param name="src" value="$1"`Close()`>
+		<param name="controller" value="$4"`Close()`>
+		<param name="autoplay" value="$5"`Close()`>
+		<embed src="${1:movie.mov}"
+			width="${2:320}" height="${3:240}"
+			controller="${4:true}" autoplay="${5:true}"
+			scale="tofit" cache="true"
+			pluginspage="http://www.apple.com/quicktime/download/"
+		`Close()[1:]`>
+	</object>${6}
+endsnippet
+snippet flash
+	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+	 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+		<param name="src" value="$1"`Close()`>
+		<param name="controller" value="$4"`Close()`>
+		<param name="autoplay" value="$5"`Close()`>
+		<embed src="${1:movie.mov}"
+			width="${2:320}" height="${3:240}"
+			controller="${4:true}" autoplay="${5:true}"
+			scale="tofit" cache="true"
+			pluginspage="http://www.apple.com/quicktime/download/"
+		`Close()[1:]`>
+	</object>${6}
+endsnippet
+snippet obj:svg
+	<object data="${1:demo.svg}" width="${2:300}" height="${3:100}" type="image/svg+xml"
+		codebase="http://www.adobe.com/svg/viewer/install/" />
+
+	<embed src="${4:$1}" width="${5:$2}" height="${6:$3}" type="image/svg+xml"
+		pluginspage="http://www.adobe.com/svg/viewer/install/" />
+
+	</object>${7}
+endsnippet
+snippet fieldset
+	<fieldset id="$1">
+		<legend>${1:name}</legend>
+		${3}
+	</fieldset>
+endsnippet
+snippet form
+	<form action="${1:`Filename('$1_submit')`}" method="${2:get}" accept-charset="utf-8">
+		${3}
+	<p><input type="submit" value="Continue &rarr;"`Close()`></p>
+	</form>${4}
+endsnippet
+snippet h
+	<h${1:1}>${2}</h$1>${3}
+endsnippet
+snippet h1
+	<h1${1}>${2}</h1>${3}
+endsnippet
+snippet h2
+	<h2${1}>${2}</h2>${3}
+endsnippet
+snippet h3
+	<h3${1}>${2}</h3>${3}
+endsnippet
+snippet h4
+	<h4${1}>${2}</h4>${3}
+endsnippet
+snippet h5
+	<h5${1}>${2}</h5>${3}
+endsnippet
+snippet h6
+	<h6${1}>${2}</h6>${3}
+endsnippet
+snippet label
+	<input type="${3:text/checkbox/radio}" name="${4:$2}" value="${5}" id="${6:$2}"`Close()` /><label for="${2:$1}">${1:name}</label>${7}
+endsnippet
+snippet label2
+	<label for="${2:$1}">${1:name}</label><input type="${3:text/checkbox/radio}" name="${4:$2}" value="${5}" id="${6:$2}" />${7}
+endsnippet
+snippet input
+	<input type="text" name="${1}" value="${2}" />
+endsnippet
+snippet input:text
+	<input type="text" name="${1}" value="${2}" />
+endsnippet
+snippet input:search
+	<input type="search" name="${1}" value="${2}" />
+endsnippet
+snippet input:email
+	<input type="email" name="${1}" value="${2}" />
+endsnippet
+snippet input:url
+	<input type="url" name="${1}" value="${2}" />
+endsnippet
+snippet input:password
+	<input type="password" name="${1}" value="${2}" />
+endsnippet
+snippet input:pwd
+	<input type="password" name="${1}" value="${2}" />
+endsnippet
+snippet input:datetime
+	<input type="datetime" name="${1}" value="${2}" />
+endsnippet
+snippet input:datetime-local
+	<input type="datetime-local" name="${1}" value="${2}" />
+endsnippet
+snippet input:date
+	<input type="date" name="${1}" value="${2}" />
+endsnippet
+snippet input:month
+	<input type="month" name="${1}" value="${2}" />
+endsnippet
+snippet input:week
+	<input type="week" name="${1}" value="${2}" />
+endsnippet
+snippet input:time
+	<input type="time" name="${1}" value="${2}" />
+endsnippet
+snippet input:number
+	<input type="number" name="${1}" value="${2}" />
+endsnippet
+snippet input:range
+	<input type="range" name="${1}" value="${2}" />
+endsnippet
+snippet input:color
+	<input type="color" name="${1}" value="${2}" />
+endsnippet
+snippet input:checkbox
+	<input type="checkbox" name="${1}" value="${2}" />
+endsnippet
+snippet input:radio
+	<input type="radio" name="${1}" value="${2}" />
+endsnippet
+snippet input:file
+	<input type="file" name="${1}" value="${2}" />
+endsnippet
+snippet input:submit
+	<input type="submit" name="${1}" value="${2}" />
+endsnippet
+snippet input:image
+	<input type="image" name="${1}" value="${2}" />
+endsnippet
+snippet input:img
+	<input type="image" name="${1}" value="${2}" />
+endsnippet
+snippet input:hidden
+	<input type="hidden" name="${1}" value="${2}" />
+endsnippet
+snippet input:reset
+	<input type="reset" name="${1}" value="${2}" />
+endsnippet
+snippet input:button
+	<input type="button" name="${1}" value="${2}" />
+endsnippet
+snippet input:btn
+	<input type="button" name="${1}" value="${2}" />
+endsnippet
+snippet button
+	<button type="${1:button}">${2}</button>
+endsnippet
+snippet btn
+	<button type="${1:button}">${2}</button>
+endsnippet
+snippet button:submit
+	<button type="submit">${1}</button>
+endsnippet
+snippet btn:submit
+	<button type="submit">${1}</button>
+endsnippet
+snippet button:reset
+	<button type="reset">${1}</button>
+endsnippet
+snippet btn:reset
+	<button type="reset">${1}</button>
+endsnippet
+snippet text
+	<input type="text" name="${1}" value="${2}" />${3}
+endsnippet
+snippet file
+	<input type="file" name="${1}" />${2}
+endsnippet
+snippet submit
+	<input type="submit" name="${1}" value="${2:Submit}" />${3}
+endsnippet
+snippet hidden
+	<input type="hidden" name="${1}" value="${2}" />${3}
+endsnippet
+snippet radio
+	<input type="radio" name="${1}" value="${2}" />${3}
+endsnippet
+snippet checkbox
+	<input type="checkbox" name="${1}" value="${2}" />${3}
+endsnippet
+snippet reset
+	<input type="reset" name="${1}" value="${2:reset}" />${3}
+endsnippet
+snippet image
+	<input type="image" name="${1}" value="${2:image}" />${3}
+endsnippet
+snippet submit2
+	<button type="submit" name="${1}">${2:submit}</button>
+endsnippet
+snippet button2
+	<button type="button" name="${1}">${2:button}</button>${3}
+endsnippet
+snippet link
+	<link type="text/css" rel="${1:stylesheet}" href="${2:/css/master.css}" media="${3:screen}" charset="utf-8" />${4}
+endsnippet
+snippet a
+	<a href="${1}">${2}</a>
+endsnippet
+snippet a:name
+	<a name="${1}">${2}</a>
+endsnippet
+snippet a:mail
+	<a href="mailto:${1:hotoo.cn@gmail.com}?subject=${2:反馈}">${3:联系我}</a>
+endsnippet
+snippet meta
+	<meta name="${1:name}" content="${2:content}"`Close()` />${3}
+endsnippet
+snippet opt
+	<option value="${1:option}">${2:$1}</option>
+endsnippet
+snippet option
+	<option value="${1:option}">${2:$1}</option>
+endsnippet
+snippet select
+	<select name="${1:some_name}" id="${2:$1}">
+		<option value="${3:option}">${4:$3}</option>
+	</select>
+endsnippet
+snippet table
+	<table>
+	<thead>
+		<tr>
+			<th>${1:Header1}</th>
+			<th>${2:Header2}</th>
+			<th>${3:Header3}</th>${4}
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>${5:Data1}</td>
+			<td>${6:Data2}</td>
+			<td>${7:Data3}</td>${8}
+		</tr>
+	</tbody>
+	</table>${9}
+endsnippet
+snippet textarea
+	<textarea id="${1:name}" name="${2:$1}" rows="${3:8}" cols="${4:40}"${5}>${6}</textarea>${7}
+endsnippet
+snippet frame
+	<frameset rows="${1:,}" cols="${2:,}">
+		<frame src="${3}" name="${4}" />
+		<frame src="${5}" name="${6}" />
+	</frameset>
+endsnippet
+snippet iframe
+	<iframe src="${1}" width="${2:100%}" height="${3:100%}" frameborder="0" marginwidth="0" marginheight="0" scrolling="${4:yes}"${5}></iframe>${6}
+# @see http://www.blueidea.com/tech/web/2009/6547.asp
+endsnippet
+snippet cc:ie
+	<!--[if IE${1}]>${2}<![endif]-->${3}
+endsnippet
+snippet cc:ie5
+	<!--[if IE 5]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:noie5
+	<!--[if !IE 5]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie6
+	<!--[if IE 6]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie6+
+	<!--[if gt IE 6]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie6+=
+	<!--[if gte IE 6]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie6-
+	<!--[if lt IE 6]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie6-=
+	<!--[if lte IE 6]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:noie6
+	<!--[if !IE 6]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie7
+	<!--[if IE 7]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie7+
+	<!--[if gt IE 7]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie7+=
+	<!--[if gte IE 7]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie7-
+	<!--[if lt IE 7]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie7-=
+	<!--[if lte IE 7]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:noie7
+	<!--[if !IE 7]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie8
+	<!--[if IE 8]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie8+
+	<!--[if gt IE 8]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie8+=
+	<!--[if gte IE 8]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie8-
+	<!--[if lt IE 8]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:ie8-=
+	<!--[if lte IE 8]>${1}<![endif]-->${2}
+endsnippet
+snippet cc:noie8
+	<!--[if !IE 8]>${1}<![endif]-->${2}
+# @see http://code.google.com/p/zen-coding/wiki/ZenHTMLElementsEn
+endsnippet
+snippet link:css
+	<link rel="stylesheet" type="text/css" href="${1:style.css}" media="${2:all}" />
+endsnippet
+snippet link:icon
+	<link rel="shortcut icon" type="image/x-icon" href="${1:favicon.ico}" />
+endsnippet
+snippet link:favicon
+	<link rel="shortcut icon" type="image/x-icon" href="${1:favicon.ico}" />
+endsnippet
+snippet link:rss
+	<link rel="alternate" type="application/rss+xml" title="${1:RSS}" href="${2:rss.xml}" />
+endsnippet
+snippet link:atom
+	<link rel="alternate" type="application/atom+xml" title="${1:Atom}" href="${2:atom.xml}" />
+endsnippet
+snippet ul
+	<ul>
+		<li>${1}</li>
+	</ul>
+endsnippet
+snippet ol
+	<ol>
+		<li>${1}</li>
+	</ol>
+endsnippet
+snippet li
+	<li>${1}</li>
+endsnippet
+snippet dl
+	<dl>
+		<dt>${1}</dt>
+		<dd>${2}</dd>
+	</dl>
+endsnippet
+snippet dd
+	<dd>${1}</dd>
+# for Alipay Alice.
+endsnippet
+snippet ui-list
+	<h3>${1:一般列表(.ui-list)}</h3>
+	<ul class="ui-list">
+		<li class="ui-list-item"><a href="${2:#}">${3:item 1}</a></li>
+		<li class="ui-list-item"><a href="${4:#}">${5:item 2}</a></li>
+		<li class="ui-list-item"><a href="${6:#}">${7:item 3}</a></li>
+	</ul>
+endsnippet
+snippet ui-nav
+	<h3>导航(.ui-nav)</h3>
+	<ul class="ui-nav">
+	  <li class="ui-nav-item">
+		  <a href="#">导航</a>
+		  <ul class="ui-nav-item-child">
+			  <li>item</li>
+			  <li>item</li>
+			  <li>item</li>
+		  </ul>
+	  </li>
+	  <li class="ui-nav-item ui-nav-item-current">
+		  <a href="#">导航</a>
+		  <ul class="ui-nav-item-child">
+			  <li>item</li>
+			  <li>item</li>
+			  <li>item</li>
+		  </ul>
+	  </li>
+	  <li class="ui-nav-item">
+		  <a href="#">导航</a>
+		  <ul class="ui-nav-item-child">
+			  <li>item</li>
+			  <li>item</li>
+			  <li>item</li>
+		  </ul>
+	  </li>
+	  <li class="ui-nav-item">
+		  <a href="#">导航</a>
+		  <ul class="ui-nav-item-child">
+			  <li>item</li>
+			  <li>item</li>
+			  <li>item</li>
+		  </ul>
+	  </li>
+	</ul>
+endsnippet
+snippet ui-title
+	<h3>标题(.ui-title)</h3>
+	<div class="ui-title fn-clear">
+		<h2 class="ui-title-cnt fn-left">标题</h2>
+		<div class="ui-title-subcnt fn-left">
+			<!-- 标题中的其他内容 -->
+		</div>
+	</div> <!-- .ui-title -->
+
+	<!-- 如果标题没有其他内容，直接这样写 -->
+	<h2 class="ui-title">标题</h2>
+endsnippet
