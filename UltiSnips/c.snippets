@@ -5,27 +5,38 @@ snippet main
 		${1}
 		return 0;
 	}
-# #include <...>
-snippet inc
+endsnippet
+
+snippet inc "#include <...>"
 	#include <${1:stdio}.h>${2}
-# #include "..."
-snippet Inc
+endsnippet
+
+snippet Inc "#include "...""
 	#include "${1:`Filename("$1.h")`}"${2}
-# #ifndef ... #define ... #endif
-snippet Def
+endsnippet
+
+snippet Def "#ifndef ... #define ... #endif"
 	#ifndef $1
 	#define ${1:SYMBOL} ${2:value}
 	#endif${3}
+endsnippet
+
 snippet def
-	#define 
+	#define
+endsnippet
+
 snippet ifdef
 	#ifdef ${1:FOO}
 		${2:#define }
 	#endif
+endsnippet
+
 snippet #if
 	#if ${1:FOO}
 		${2}
 	#endif
+endsnippet
+
 # Header Include-Guard
 # (the randomizer code is taken directly from TextMate; it could probably be
 # cleaner, I don't know how to do it in vim script)
@@ -37,74 +48,97 @@ snippet once
 	${2}
 
 	#endif /* end of include guard: $1 */
-# If Condition
+endsnippet
+
 snippet if
 	if (${1:/* condition */}) {
 		${2:/* code */}
 	}
+endsnippet
+
 snippet el
 	else {
 		${1}
 	}
-# Tertiary conditional
-snippet t
+endsnippet
+
+snippet t "Tertiary conditional"
 	${1:/* condition */} ? ${2:a} : ${3:b}
-# Do While Loop
+endsnippet
+
 snippet do
 	do {
 		${2:/* code */}
 	} while (${1:/* condition */});
-# While Loop
+endsnippet
+
 snippet wh
 	while (${1:/* condition */}) {
 		${2:/* code */}
 	}
-# For Loop
+endsnippet
+
 snippet for
 	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
 		${4:/* code */}
 	}
-# Custom For Loop
-snippet forr
+endsnippet
+
+snippet forr "Custom For Loop"
 	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) {
 		${5:/* code */}
 	}
-# Function
-snippet fun
+endsnippet
+
+snippet fun "Function"
 	${1:void} ${2:function_name}(${3})
 	{
 		${4:/* code */}
 	}
-# Function Declaration
-snippet fund
+endsnippet
+
+snippet fund "Function Declaration"
 	${1:void} ${2:function_name}(${3});${4}
-# Typedef
-snippet td
+endsnippet
+
+snippet td "Typedef"
 	typedef ${1:int} ${2:MyCustomType};${3}
-# Struct
-snippet st
+endsnippet
+
+snippet st "Struct"
 	struct ${1:`Filename('$1_t', 'name')`} {
 		${2:/* data */}
 	}${3: /* optional variable list */};${4}
-# Typedef struct
-snippet tds
+endsnippet
+
+snippet tds "Typedef struct"
 	typedef struct ${2:_$1 }{
 		${3:/* data */}
 	} ${1:`Filename('$1_t', 'name')`};
-# Typdef enum
-snippet tde
+endsnippet
+
+snippet tde "Typdef enum"
 	typedef enum {
 		${1:/* data */}
 	} ${2:foo};
+endsnippet
+
 # printf
 # unfortunately version this isn't as nice as TextMates's, given the lack of a
 # dynamic `...`
 snippet pr
 	printf("${1:%s}\n"${2});${3}
+endsnippet
+
 # fprintf (again, this isn't as nice as TextMate's version, but it works)
 snippet fpr
 	fprintf(${1:stderr}, "${2:%s}\n"${3});${4}
+endsnippet
+
 snippet .
 	[${1}]${2}
+endsnippet
+
 snippet un
 	unsigned
+endsnippet

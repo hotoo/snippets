@@ -1,39 +1,54 @@
 # module and export all
 snippet mod
 	-module(${1:`Filename('', 'my')`}).
-	
+
 	-compile([export_all]).
-	
+
 	start() ->
 	    ${2}
-	
+
 	stop() ->
 	    ok.
+endsnippet
+
 # define directive
 snippet def
 	-define(${1:macro}, ${2:body}).${3}
+endsnippet
+
 # export directive
 snippet exp
 	-export([${1:function}/${2:arity}]).
+endsnippet
+
 # include directive
 snippet inc
 	-include("${1:file}").${2}
+endsnippet
+
 # behavior directive
 snippet beh
 	-behaviour(${1:behaviour}).${2}
+endsnippet
+
 # if expression
 snippet if
 	if
 	    ${1:guard} ->
 	        ${2:body}
 	end
+endsnippet
+
 # case expression
 snippet case
 	case ${1:expression} of
 	    ${2:pattern} ->
 	        ${3:body};
 	end
+endsnippet
+
 # record directive
 snippet rec
 	-record(${1:record}, {
 	    ${2:field}=${3:value}}).${4}
+endsnippet
